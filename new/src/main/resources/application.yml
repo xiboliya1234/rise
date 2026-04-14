@@ -1,0 +1,47 @@
+server: 
+ port: 23333
+ session-timeout: 30
+ tomcat.max-threads: 0
+ tomcat.uri-encoding: UTF-8
+
+
+spring:
+  user:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.92.148.92:3306:3306/rise?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=true
+    username: root
+    password: Liukaiwen233 # 你的数据库密码
+  web:
+    cors:
+      exposed-headers:
+        "Content-Type": true
+        "Authorization": true
+        "X-Requested-With": true
+        "x-http-method-override": true
+
+servlet:
+    # 上传限定参数
+    multipart:
+      # 是否启用分段上传支持
+      enabled: true
+      # 最大请求大小
+      max-request-size: 10MB
+      # 最大文件的大小
+      max-file-size: 5MB
+      #上传文件的中间位置
+      location: C:/临时文件
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+riseout:
+  url: http://47.92.148.92:9999
+  fileurl: C:/video/   #文件的实际位置
+  fileuploadpath: C:\video\ #上传文件的实际位置
+
+
+
+

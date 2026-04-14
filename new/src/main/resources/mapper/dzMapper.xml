@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rise.dao.DzDao">
+
+    <!--2. 基于xml的方式-->
+    <select id="getDz" resultType="com.rise.model.dzModel">
+        select * from dz  where lx ='人像卡口' and sbmc like '%出站%' limit 100
+    </select>
+
+    <select id="getDataBysbmc" resultType="com.rise.model.dzModel">
+        select * from dz
+        <where>
+            <if test="params.sbmc != null and params != null and params !=''">
+                and   sbmc like '%${params.sbmc}%'
+            </if>
+            <if test="params.lx != null and params != null and params !=''">
+                and   lx like '%${params.lx}%'
+            </if>
+        </where>
+
+    </select>
+
+    <select id="getsblx" resultType="com.rise.model.sblxModel">
+        select * from sblx
+    </select>
+
+</mapper>
