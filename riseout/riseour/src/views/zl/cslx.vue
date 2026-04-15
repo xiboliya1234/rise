@@ -7,7 +7,7 @@
       <el-button slot="reference" type="danger" style="margin-left: 5px">批量删除</el-button>
     </el-popconfirm>
     <el-button type="success" style="margin-left: 10px" @click="exp()">全量导出报表</el-button>
-    <el-upload action="http://localhost:23333/vue/dz/cslx/upload" style="display: inline-block; margin-left: 10px" :show-file-list="false" :on-success="successUpload">
+    <el-upload action="http://localhost:12345/vue/dz/cslx/upload" style="display: inline-block; margin-left: 10px" :show-file-list="false" :on-success="successUpload">
       <el-button size="small" type="primary">批量导入</el-button>
     </el-upload>
   </div>
@@ -193,7 +193,7 @@ export default {
     exp(){
       alert(request.baseURL);
       let user = localStorage.getItem("user");
-      location.href = 'http://localhost:23333/vue/dz/cslx/export?token=' + JSON.parse(user).token
+      location.href = 'http://localhost:12345/vue/dz/cslx/export?token=' + JSON.parse(user).token
     },
     successUpload(res) {
       if (res.code === '0') {

@@ -25,7 +25,7 @@
         <template v-slot="scope">
           <el-image
               style="width: 70px; height: 70px; border-radius: 50%"
-              :src="'http://47.92.148.92:23333/rise/vue/files/'+ scope.row.videoimg ">
+              :src="'http://localhost:12345/vue/files/'+ scope.row.videoimg ">
           </el-image>
         </template>
 
@@ -72,7 +72,7 @@
           </el-form-item>
           <el-form-item label="视频封面" label-width="20%" v-model="form.videoimg">
             <el-upload
-                action="http://localhost:23333/vue/files/upload"
+                action="http://localhost:12345/vue/files/upload"
                 :on-success="successupload">
               <el-button size="small" type="primary">点击上传</el-button>
             </el-upload>

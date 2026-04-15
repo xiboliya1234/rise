@@ -1,14 +1,14 @@
 import axios from 'axios'
 
 
-const baseURL ="http://192.168.199.132:23333";
+const baseURL ="http://localhost:12345";
 
 // 创建一个axios对象出来
 const request = axios.create({
 
-   baseURL: 'http://localhost:3000', //生产环境
-    //baseURL: 'http://localhost:23333',    //办公室环境
-    //baseURL: 'http://192.168.124.101:23333',    //家环境
+   baseURL: 'http://localhost:12345', //生产环境
+    //baseURL: 'http://localhost:12345',    //办公室环境
+    //baseURL: 'http://localhost:12345',    //家环境
 
     timeout: 50000
 })
@@ -53,4 +53,3 @@ request.interceptors.response.use(
 
 // 导出request函数
 export default request
-

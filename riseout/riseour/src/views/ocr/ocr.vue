@@ -4,7 +4,7 @@
 
       <el-upload
 
-           action="http://47.92.148.92:23333/rise/vue/files/uploadIMG"
+           action="http://localhost:12345/vue/files/uploadIMG"
           :on-success="successupload">
         <el-button size="small" type="primary">点击选择图片</el-button>
       </el-upload>
@@ -98,12 +98,12 @@ export default {
       const regex = /^[1-9]\d{5}(19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[Xx\d]$/;
       const match = res.match(regex);
       if (match) {
-        console.log("身份证号是:", match[0]);
-        this.zz= {
+        console.log("ID number found:", match[0]);
+        this.zz = {
           sfzh: match[0]
         }
       } else {
-        console.log("未找到身份证号");
+        console.log("ID number not found");
       }
     },
 

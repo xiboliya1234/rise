@@ -1,4 +1,4 @@
-server: 
+﻿server: 
  port: 23333
  session-timeout: 30
  tomcat.max-threads: 0
@@ -8,9 +8,9 @@ server:
 spring:
   user:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.92.148.92:3306:3306/rise?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=true
+    url: jdbc:mysql://localhost:3306:3306/rise?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=true
     username: root
-    password: Liukaiwen233 # 你的数据库密码
+    password: 123456 # 浣犵殑鏁版嵁搴撳瘑鐮?
   web:
     cors:
       exposed-headers:
@@ -20,16 +20,16 @@ spring:
         "x-http-method-override": true
 
 servlet:
-    # 上传限定参数
+    # 涓婁紶闄愬畾鍙傛暟
     multipart:
-      # 是否启用分段上传支持
+      # 鏄惁鍚敤鍒嗘涓婁紶鏀寔
       enabled: true
-      # 最大请求大小
+      # 鏈€澶ц姹傚ぇ灏?
       max-request-size: 10MB
-      # 最大文件的大小
+      # 鏈€澶ф枃浠剁殑澶у皬
       max-file-size: 5MB
-      #上传文件的中间位置
-      location: C:/临时文件
+      #涓婁紶鏂囦欢鐨勪腑闂翠綅缃?
+      location: C:/涓存椂鏂囦欢
 
 pagehelper:
   helper-dialect: mysql
@@ -38,9 +38,10 @@ pagehelper:
   params: count=countSql
 
 riseout:
-  url: http://47.92.148.92:9999
-  fileurl: C:/video/   #文件的实际位置
-  fileuploadpath: C:\video\ #上传文件的实际位置
+  url: http://localhost:9999
+  fileurl: C:/video/   #鏂囦欢鐨勫疄闄呬綅缃?
+  fileuploadpath: C:\video\ #涓婁紶鏂囦欢鐨勫疄闄呬綅缃?
+
 
 
 

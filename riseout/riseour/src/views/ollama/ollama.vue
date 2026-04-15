@@ -3,7 +3,7 @@ import {ref} from "vue";
 const result =ref([]);
 const message = ref('');
 const ask1 =()=>{
-  let source =new EventSource('http://192.168.31.235:45454/ai/generateStream?message='+message.value);
+  let source =new EventSource('http://localhost:12345/ai/generateStream?message='+message.value);
   let count =0;
   source.onmessage = (event)=>{
 
