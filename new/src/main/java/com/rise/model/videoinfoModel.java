@@ -32,7 +32,8 @@ public class videoinfoModel {
     private String videotag;
     @TableField("videourl")
     private String videourl;
+    @TableField(exist = false)
     private Integer pagenum;
-
+    @TableField(exist = false)
     private Integer pagesize;
 }

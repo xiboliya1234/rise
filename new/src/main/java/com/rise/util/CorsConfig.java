@@ -47,7 +47,8 @@ public class CorsConfig implements WebMvcConfigurer {
                         .excludePathPatterns("/static/**")
                         .excludePathPatterns("/vue/map/getData")
                         .excludePathPatterns("/vue/dz/cslx/upload")
-                        .excludePathPatterns("/vue/files/**");
+                        .excludePathPatterns("/vue/files/**")
+                        .excludePathPatterns("/vue/video/play/**");
 
 
     }

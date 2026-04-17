@@ -2,22 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.rise.dao.videoDao">
 
-    <!--2. 基于xml的方式-->
-
-
     <select id="getVideoinfo" resultType="com.rise.model.videoinfoModel">
-        select * from videoinfo
+        select
+            id,
+            videoname,
+            videocode,
+            videomsg,
+            videodate,
+            videoactor,
+            videoimg,
+            videotag,
+            videourl
+        from videoinfo
         <where>
-            <if test="params.videoname != null and params != null and params !=''">
-                and   videoname like '%${params.videoname}%'
+            <if test="params != null and params.videoname != null and params.videoname != ''">
+                and videoname like concat('%', #{params.videoname}, '%')
             </if>
-            <if test="params.videocode != null and params != null and params !=''">
-                and   videocode like '%${params.videocode}%'
+            <if test="params != null and params.videocode != null and params.videocode != ''">
+                and videocode like concat('%', #{params.videocode}, '%')
+            </if>
+            <if test="params != null and params.videoactor != null and params.videoactor != ''">
+                and videoactor like concat('%', #{params.videoactor}, '%')
             </if>
         </where>
-
+        order by id desc
     </select>
-
-
 
 </mapper>
